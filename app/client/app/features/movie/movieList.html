@@ -1,0 +1,106 @@
+<section class="page">
+
+    <section class="row ui-section" data-ng-controller="movieCtrl" ng-cloak>
+        <div class="col-lg-12 clearfix">
+            <div class="col-lg-8">
+                <h2 class="section-header" data-translate="MOVIES"></h2>
+            </div>
+            <div class="col-lg-4">
+                <form>
+                    <input type="text"
+                           placeholder="Search..."
+                           class="form-control"
+                           data-ng-model="searchKeywords"
+                           data-ng-keyup="search()" />
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="row" >
+                <div class="col-md-4" ng-repeat-start="movie in movies | filter:searchKeywords">
+                    <div class="card bg-white">
+                        <div class="card-image" ng-click="playMovie(movie._id)">
+                            <img ng-src="data:image/jpeg;base64,{{movie.thumbnail}}"/>
+                        </div>
+                        <div class="card-content" ng-click="playMovie(movie._id)">
+                            <a class="card-button pull-right" href="javascript:;">
+                                <button class="btn btn-icon btn-icon-round btn-floating btn-danger"><i class="fa fa-heart"></i></button>
+                            </a>
+                            <p><b>{{movie.title}}</b></p>
+                            <br />
+                            <div>
+                                <p>Tag: </p> <span ng-repeat="tag in movie.tags" style="font-weight: bold"><label>{{tag}}</label> </span>
+                            </div>
+                        </div>
+                        <div class="card-action" ng-show="session.user.supervisor">
+                            <a ng-click="editMovie(movie._id)" class="pointer" data-translate="EDIT"></a>
+                            <a ng-click="disableMovie(movie)" class="pointer" data-translate="DISABLE"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix" ng-if="$index%3==2"></div>
+                <div ng-repeat-end=""></div>
+            </div>
+        </div>
+
+        <md-button class="md-fab md-warn md-fab-bottom-right" aria-label="new movie" ng-click="new()" ng-show="session.user.supervisor">
+            <span class="fa fa-plus"></span>
+        </md-button>
+    </section>
+
+</section>
+
+<!--
+<section class="page">
+
+    <section class="row ui-section" data-ng-controller="movieCtrl" ng-cloak>
+        <div class="col-lg-12 clearfix">
+            <div class="col-lg-8">
+                <h2 class="section-header" data-translate="MOVIES"></h2>
+            </div>
+            <div class="col-lg-4">
+                <form>
+                    <input type="text"
+                           placeholder="Search..."
+                           class="form-control"
+                           data-ng-model="searchKeywords"
+                           data-ng-keyup="search()" />
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="row" >
+                <div class="col-md-4" ng-repeat-start="movie in movies | filter:searchKeywords">
+                    <div class="card bg-white">
+                        <div class="card-image" ng-click="playMovie(movie._id)">
+                            <img ng-src="data:image/jpeg;base64,{{movie.thumbnail}}"/>
+                            <span class="card-title">{{movie.title}}</span>
+                        </div>
+                        <div class="card-content" ng-click="playMovie(movie._id)">
+                            <a class="card-button pull-right" href="javascript:;">
+                                <button class="btn btn-icon btn-icon-round btn-floating btn-danger"><i class="fa fa-heart"></i></button>
+                            </a>
+                            <p>{{movie.description}}</p>
+                            <br />
+                            <div>
+                                <p>Tag: </p> <span ng-repeat="tag in movie.tags" style="font-weight: bold"><label>{{tag}}</label> </span>
+                            </div>
+                        </div>
+                        <div class="card-action" ng-show="session.user.supervisor">
+                            <a ng-click="editMovie(movie._id)" class="pointer" data-translate="EDIT"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix" ng-if="$index%3==2"></div>
+                <div ng-repeat-end=""></div>
+            </div>
+        </div>
+
+        <md-button class="md-fab md-warn md-fab-bottom-right" aria-label="new movie" ng-click="new()" ng-show="session.user.supervisor">
+            <span class="fa fa-plus"></span>
+        </md-button>
+    </section>
+
+</section>-->

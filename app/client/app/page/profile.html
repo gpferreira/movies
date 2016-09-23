@@ -1,0 +1,103 @@
+
+<div class="page page-profile" data-ng-controller="profileCtrl">
+
+    <header class="profile-header">
+        <div class="profile-img">
+            <img alt="" src="images/avatar2_big.png" class="img-circle">
+            <!--<img alt="" src="images/g1.jpg" class="img-circle">-->
+        </div>
+
+        <!--<div class="profile-name">
+            <span>{{session.user.local.name}}</span>
+        </div>-->
+
+        <div class="profile-social">
+            <a href="javascript:;" class="btn-icon btn-icon-round btn-facebook"><i class="fa fa-facebook"></i></a>
+            <a href="javascript:;" class="btn-icon btn-icon-round btn-twitter"><i class="fa fa-twitter"></i></a>
+            <a href="javascript:;" class="btn-icon btn-icon-round btn-instagram"><i class="fa fa-instagram"></i></a>
+        </div>
+
+        <div class="profile-info" style="font-size: 20px">
+            <span>{{user.local.name}}</span>
+        </div>
+    </header>
+
+    <div class="divider divider-lg"></div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel mini-box">
+            <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-danger">
+                <i class="fa fa-video-camera"></i>
+            </span>
+            <div class="box-info">
+                <p class="size-h2">{{movieHistory.length}}</p>
+                <p class="text-muted">Movies played</p>
+            </div>
+            </div>                    
+        </div>
+        <div class="col-sm-4">
+            <div class="panel mini-box">
+            <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-warning">
+                <i class="fa fa-image"></i>
+            </span>
+            <div class="box-info">
+                <p class="size-h2">{{views}}</p>
+                <p class="text-muted">Views</p>
+            </div>
+            </div>                    
+        </div>
+        <div class="col-sm-4">
+            <div class="panel mini-box">
+            <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-success">
+                <i class="fa fa-bookmark"></i>
+            </span>
+            <div class="box-info">
+                <p class="size-h2">10</p>
+                <p class="text-muted">Available movies</p>
+            </div>
+            </div>
+        </div>
+        <!--<div class="col-sm-3">
+            <div class="panel mini-box">
+            <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-info">
+                <i class="fa fa-check"></i>
+            </span>
+            <div class="box-info">
+                <p class="size-h2">34</p>
+                <p class="text-muted">Tasks Finised</p>
+            </div>
+            </div>
+        </div>-->
+    </div>
+
+    <div class="divider divider-lg"></div>
+    <div class="row ui-section">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table no-margin">
+                <thead>
+                    <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <!--<th>Last view</th>-->
+                    <th>Progress</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="movie in movieHistory">
+                    <td>{{$index + 1}}</td>
+                    <!--<td><span class="color-success"><i class="fa fa-level-up"></i></span> TWLT</td>-->
+                    <!--<td><span class="label label-info">Pending</span></td>-->
+                    <td>{{movie.title}}</td>
+                    <!--<td>{{movie.date | date:"dd/MM/yyyy 'at' h:mma"}}</td>-->
+                    <td><uib-progressbar class="progressbar-xs no-margin" value="movie.progress"></uib-progressbar></td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            </div>
+        </div>    
+    </div>
+
+</div>

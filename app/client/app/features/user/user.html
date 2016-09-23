@@ -1,0 +1,77 @@
+<div class="page-form-ele page" ng-controller="userCtrl">
+
+    <div class="row ui-section">
+
+        <div class="col-lg-12 clearfix">
+            <h2 class="section-header" data-translate="USER"></h2>
+        </div>
+
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+
+                            <div layout="column"  ng-cloak class="md-inline-form inputdemoBasicUsage">
+                                <md-content layout-padding>
+                                    <form name="userForm">
+                                        <div layout layout-sm="column">
+                                            <md-input-container flex>
+                                                <label data-translate="NAME"></label>
+                                                <input ng-model="user.local.name">
+                                            </md-input-container>
+                                        </div>
+
+                                        <div layout layout-sm="column">
+                                            <md-input-container flex>
+                                                <label data-translate="EMAIL"></label>
+                                                <input ng-model="user.local.email">
+                                            </md-input-container>
+                                        </div>
+
+                                        <div layout layout-sm="column">
+                                            <md-input-container flex>
+                                                <label data-translate="USERNAME"></label>
+                                                <input ng-model="user.local.username">
+                                            </md-input-container>
+                                        </div>
+
+                                        <div layout layout-sm="column">
+                                            <md-input-container flex>
+                                                <label data-translate="PASSWORD"></label>
+                                                <input data-ng-model="user.local.password" type="password">
+                                            </md-input-container>
+                                        </div>
+
+                                        <md-chips ng-model="user.category"
+                                                  md-autocomplete-snap
+                                                  md-require-match="true">
+                                            <md-autocomplete
+                                                    md-selected-item="selectedItem"
+                                                    md-search-text="searchText"
+                                                    md-items="item in querySearch(searchText)"
+                                                    md-item-text="item.description"
+                                                    placeholder="Digite uma categoria">
+                                                <span md-highlight-text="searchText">{{item.description}}</span>
+                                            </md-autocomplete>
+                                            <md-chip-template>
+                                                <span>
+                                                  <strong>{{$chip.description}}</strong>
+                                                </span>
+                                            </md-chip-template>
+                                        </md-chips>
+
+                                    </form>
+                                </md-content>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <md-button class="md-fab md-warn md-fab-bottom-right" aria-label="Gravar dados" ng-click="save()">
+            <span class="fa fa-check"></span>
+        </md-button>
+    </div>
+</div>

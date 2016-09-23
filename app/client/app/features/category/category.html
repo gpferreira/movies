@@ -1,0 +1,39 @@
+<div class="page-form-ele page" ng-controller="categoryCtrl">
+
+    <div class="row ui-section">
+
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header" data-translate="CATEGORY"></h2>
+        </div>
+
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+
+                            <div layout="column"  ng-cloak class="md-inline-form inputdemoBasicUsage">
+                                <md-content layout-padding>
+                                    <form name="categoryForm">
+                                        <div layout layout-sm="column">
+                                            <md-input-container flex>
+                                                <label data-translate="DESCRIPTION"></label>
+                                                <input ng-model="category.description">
+                                            </md-input-container>
+                                        </div>
+                                    </form>
+                                </md-content>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <md-button class="md-fab md-warn md-fab-bottom-right" aria-label="Gravar dados" ng-click="save()">
+            <span class="fa fa-check"></span>
+        </md-button>
+
+    </div>
+</div>

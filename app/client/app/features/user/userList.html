@@ -1,0 +1,100 @@
+
+<div class="page page-table" data-ng-controller="userCtrl" ng-cloak>
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header" data-translate="USERS"></h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default table-dynamic">
+                <div class="table-filters">
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-6">
+                            <form>
+                                <input type="text"
+                                       placeholder="Search..."
+                                       class="form-control"
+                                       data-ng-model="searchKeywords"
+                                       data-ng-keyup="search()">
+                            </form>
+                        </div>
+                        <div class="col-sm-3 col-xs-6 filter-result-info">
+                <span>
+                Showing {{filteredUsers.length}}/{{users.length}} entries
+                </span>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="table table-bordered table-striped table-responsive">
+                    <thead>
+                    <tr>
+                        <th>
+                            <div class="th">
+                                Name
+                <span class="fa fa-angle-up"
+                      data-ng-click=" order('user.local.name') "
+                      data-ng-class="{active: row == 'user.local.name'}"></span>
+                <span class="fa fa-angle-down"
+                      data-ng-click=" order('-user.local.name') "
+                      data-ng-class="{active: row == '-user.local.name'}"></span>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th">
+                                E-mail
+                <span class="fa fa-angle-up"
+                      data-ng-click=" order('email') "
+                      data-ng-class="{active: row == 'email'}"></span>
+                <span class="fa fa-angle-down"
+                      data-ng-click=" order('-email') "
+                      data-ng-class="{active: row == '-email'}"></span>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th">
+                                Username
+                <span class="fa fa-angle-up"
+                      data-ng-click=" order('username') "
+                      data-ng-class="{active: row == 'username'}"></span>
+                <span class="fa fa-angle-down"
+                      data-ng-click=" order('-username') "
+                      data-ng-class="{active: row == '-username'}"></span>
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-ng-repeat="user in currentPageUsers"  ng-click="editUser(user._id)">
+                        <td>{{user.local.name}}</td>
+                        <td>{{user.local.email}}</td>
+                        <td>{{user.local.username}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <footer class="table-footer">
+                    <div class="row">
+                        <div class="col-md-12 text-right pagination-container">
+                            <uib-pagination class="pagination-sm"
+                                            ng-model="currentPage"
+                                            total-items="filteredUsers.length"
+                                            max-size="4"
+                                            ng-change="select(currentPage)"
+                                            items-per-page="numPerPage"
+                                            rotate="false"
+                                            previous-text="&lsaquo;" next-text="&rsaquo;"
+                                            boundary-links="true"></uib-pagination>
+                        </div>
+                    </div>
+                </footer>
+            </section>
+        </div>
+
+    </div>
+
+    <md-button class="md-fab md-warn md-fab-bottom-right" aria-label="new user" ng-click="new()">
+        <span class="fa fa-plus"></span>
+    </md-button>
+
+</div>

@@ -1,0 +1,59 @@
+
+<div class="nav-wrapper">
+    <ul id="nav"
+    class="nav"
+    data-slim-scroll
+    data-collapse-nav
+    data-highlight-active
+    data-ng-controller="sidebarCtrl">
+        <li class="nav-title"> <span data-translate="NAVIGATION"></span> </li>
+        <li data-ng-repeat="feature in features | orderBy: 'dataTranslate'">
+            <a md-button aria-label="meanu" href="{{feature.path}}">
+                <i class="{{feature.class}}"></i>
+                <span data-translate="{{feature.dataTranslate}}"></span>
+            </a>
+        </li>
+
+
+        <!--
+        <li><a md-button aria-label="meanu" href="#/dashboard"><i class="zmdi zmdi-home"></i><span data-translate="DASHBOARD"></span> </a></li>
+        <li><a md-button aria-label="meanu" href="#/features/tag"><i class="zmdi zmdi-tag"></i><span data-translate="TAGS"></span> </a></li>
+        <li><a md-button aria-label="meanu" href="#/features/user"><i class="zmdi zmdi-accounts"></i><span data-translate="USERS"></span> </a></li>
+        <li><a md-button aria-label="meanu" href="#/features/movie"><i class="zmdi zmdi-collection-video"></i><span data-translate="MOVIES"></span> </a></li>
+        -->
+        <!--
+        <li>
+            <a md-button aria-label="meanu" href="#/ui"><i class="zmdi zmdi-card-giftcard"></i><span><span data-translate="MATERIAL"></span> UI</span></a>
+            <ul>
+                <li><a md-button aria-label="meanu" href="#/ui/typography"><i class="fa fa-circle"></i><span data-translate="TYPOGRAPHY"></span></a></li>
+                <li><a md-button aria-label="meanu" href="#/ui/buttons"><i class="fa fa-circle"></i><span data-translate="BUTTONS"></span></a></li>
+                <li><a md-button aria-label="meanu" href="#/ui/icons"><i class="fa fa-circle"></i><span data-translate="ICONS"></span> <span class="badge badge-info">3</span></a></li>
+                <li><a md-button aria-label="meanu" href="#/ui/lists"><i class="fa fa-circle"></i><span data-translate="LISTS"></span></a></li>
+                <li><a md-button aria-label="meanu" href="#/ui/components"><i class="fa fa-circle"></i><span data-translate="COMPONENTS"></span> <span class="badge badge-danger">24</span></a></li>
+                <li><a md-button aria-label="meanu" href="#/ui/cards"><i class="fa fa-circle"></i><span data-translate="CARDS"></span></a></li>
+                <li><a md-button aria-label="meanu" href="#/ui/pricing-tables"><i class="fa fa-circle"></i><span data-translate="PRICING_TABLES"></span></a></li>
+                <li><a md-button aria-label="meanu" href="#/ui/timeline"><i class="fa fa-circle"></i><span data-translate="TIMELINE"></span></a></li>
+                <li><a md-button aria-label="meanu" href="#/map/maps"><i class="fa fa-circle"></i><span data-translate="MAPS"></span></a></li>
+                <li><a md-button aria-label="meanu" href="#/ui/grids"><i class="fa fa-circle"></i><span data-translate="GRIDS"></span></a></li>
+            </ul>
+        </li>
+        <li>
+            <a md-button aria-label="meanu" href="#/table"><i class="zmdi zmdi-view-list"></i><span data-translate="TABLES"></span></a>
+            <ul>
+                <li><a md-button aria-label="meanu" href="#/table/static"><i class="fa fa-circle"></i><span data-translate="STATIC_TABLES"></span></a></li>
+                <li><a md-button aria-label="meanu" href="#/table/responsive"><i class="fa fa-circle"></i><span data-translate="RESPONSIVE_TABLES"></span> <span class="badge badge-info">2</span></a></li>
+                <li><a md-button aria-label="meanu" href="#/table/dynamic"><i class="fa fa-circle"></i><span data-translate="DYNAMIC_TABLES"></span></a></li>
+            </ul>
+        </li>
+        <li>
+            <a md-button aria-label="meanu" href="#/form"><i class="zmdi zmdi-edit"></i><span data-translate="FORMS"></span></a>
+            <ul>
+                <li><a md-button aria-label="meanu" href="#/form/elements"><i class="fa fa-circle"></i><span data-translate="FORM_ELEMENTS"></span> <span class="badge badge-info">15</span></a></li>
+                <li><a md-button aria-label="meanu" href="#/form/validation"><i class="fa fa-circle"></i><span data-translate="FORM_VALIDATION"></span></a></li>
+                <li><a md-button aria-label="meanu" href="#/form/wizard"><i class="fa fa-circle"></i><span data-translate="FORM_WIZARD"></span></a></li>
+                <li><a md-button aria-label="meanu" href="#/form/layouts"><i class="fa fa-circle"></i><span data-translate="FORM_LAYOUTS"></span></a></li>
+            </ul>
+        </li>
+        -->
+    </ul>
+</div>

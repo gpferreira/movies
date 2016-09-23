@@ -1,0 +1,59 @@
+
+// Old browsers
+.lt-ie9-bg {
+    z-index: 11111;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    color: #999;
+    padding: 100px 20px;
+    text-align: center;
+    font-size: 26px;
+
+    a {
+        color: #f5f5f5;
+        border-bottom: 2px solid #fff;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+
+// 
+.non-display {
+    display: none;
+}
+
+.page {
+    padding: 15px 30px;
+
+    > .ui-section:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.page-form-ele {
+    h3 {
+        margin: 0;
+    }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.drop-box {
+  background: #F8F8F8;
+  border: 5px dashed #DDD;
+  min-height: 350px;
+  text-align: center;
+  padding-top: 160px;
+}
+
+.dragover {
+  border: 5px dashed black;
+}
